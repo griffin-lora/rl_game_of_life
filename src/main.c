@@ -58,6 +58,9 @@ int main() {
         rlActiveDrawBuffers(1);
 
         BeginDrawing();
+
+        ClearBackground(YELLOW);
+
         BeginShaderMode(view_shader);
 
         DrawTexturePro(gol_textures[gol_index], (Rectangle) {
@@ -66,7 +69,7 @@ int main() {
             .width = (float)gol_textures[gol_index].width,
             .height = (float)gol_textures[gol_index].height
         }, (Rectangle) {
-            .x = 0,
+            .x = 280,
             .y = 0,
             .width = 720,
             .height = 720

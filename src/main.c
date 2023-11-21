@@ -6,7 +6,7 @@
 int main() {
     InitWindow(1280, 720, "Game of Life");
 
-    SetTargetFPS(5);
+    SetTargetFPS(10);
 
     Shader gol_shader = LoadShader(0, "shader/gol_shader.glsl");
     Shader view_shader = LoadShader(0, "shader/view_shader.glsl");

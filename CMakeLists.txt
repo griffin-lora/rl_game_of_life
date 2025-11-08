@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 project(GOL LANGUAGES C CXX)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/build/conan_toolchain.cmake)
+include(${CMAKE_CURRENT_BINARY_DIR}/conan_toolchain.cmake)
 set(CMAKE_BUILD_TYPE Release)
 
 find_package(raylib REQUIRED)

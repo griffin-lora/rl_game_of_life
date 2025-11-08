@@ -2,8 +2,11 @@
 #include <rlgl.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <unistd.h>
 
 int main() {
+    chdir("..");
+
     InitWindow(1280, 720, "Game of Life");
 
     SetTargetFPS(10);
@@ -15,7 +18,7 @@ int main() {
     int gol_size = gol_init_image.width;
     
     // // Params are unused here for some reason
-    uint32_t framebuffer = rlLoadFramebuffer(gol_size, gol_size);
+    uint32_t framebuffer = rlLoadFramebuffer();
 
     Texture2D gol_textures[2];
 

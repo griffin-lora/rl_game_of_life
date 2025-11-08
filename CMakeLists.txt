@@ -1,16 +1,10 @@
 cmake_minimum_required(VERSION 3.31)
 project(GOL LANGUAGES C CXX)
-include(FetchContent)
-set(FETCHCONTENT_QUIET FALSE)
-set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-set(BUILD_GAMES OFF CACHE BOOL "" FORCE)
-set(OPENGL_INCLUDE_DIR )
 
-FetchContent_Declare(
-    raylib
-    GIT_REPOSITORY https://github.com/raysan5/raylib.git
-)
-FetchContent_MakeAvailable(raylib)
+include(${CMAKE_CURRENT_SOURCE_DIR}/build/conan_toolchain.cmake)
+set(CMAKE_BUILD_TYPE Release)
+
+find_package(raylib REQUIRED)
 
 file(GLOB SRC CONFIGURE_DEPENDS "src/*.c")
 add_executable(app ${SRC})
